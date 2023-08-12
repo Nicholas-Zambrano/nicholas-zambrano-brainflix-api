@@ -17,3 +17,7 @@ app.listen(port,()=>{
     console.log(`server is on port ${port}`);
 })
 
+
+// allowing to display the images via static
+app.use("/public",express.static("./public/images"))
+
