@@ -4,6 +4,7 @@ const router = express.Router();
 const videosData = require("../data/videos.json");
 const crypto = require("crypto");
 
+/*  a list of random names,channel names,timestamps,views,likes*/
 const randomNames = [
   "nick",
   "jack",
@@ -13,7 +14,6 @@ const randomNames = [
   "piero",
   "reascos",
 ];
-
 const channelNames = [
   "Lionel Messi",
   "Cristiano Ronaldo",
@@ -36,6 +36,7 @@ const randomViews = [
 
 const randomLikes = [234, 567, 1234, 987, 345, 789, 456, 876, 654, 321];
 
+/* function for accessing a random index from an array*/
 function randomizer(randomList) {
   const randomIndex = Math.floor(Math.random() * randomList.length);
   return randomList[randomIndex];
@@ -69,6 +70,7 @@ router.post("/", (request, response) => {
     image: request.body.image, //using the url in the request body
     channel: randomizer(channelNames),
 
+    // this will be filled with new comments
     comments: [],
   };
 
